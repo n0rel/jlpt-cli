@@ -1,0 +1,38 @@
+openai_token: ...
+quiz_prompt: |
+  I am teaching a university class of Japanese Language.
+
+  Generate a quiz consisting of 10 questions.
+  The quiz is based off of the JLPT (Japanese Language Proficiency Test)
+  and the level we are quizzing on is level {{jlpt_level}}.
+
+  You MUST use only kanji & vocabulary made of the following kanji:
+  {{kanji}}
+
+  You MUST only use the following grammar clauses:
+  {{grammar}}
+
+  These are the only subjects that have been taught in the class, and any
+  vocabulary made up of kanji that was not in the list above will not be able to be read
+  by the students and therefor they will not be able to complete this quiz, which is unacceptable.
+
+  The test should be made of the following question types:
+    - SentenceCompletion -> The student will be given a sentence where a grammar piece is missing. The student will then need to choose between 4 different grammar choices to create a comprehensible and grammatically correct sentence.
+    - ReadingComprehension -> The student will be given a small text piece using the kanji & grammar stated above. There will then be several questions asking about the content of the text piece, to check if the student understood what he read.
+
+  Each answer will come with a detailed response on why it is the correct answer and should be chosen instead of the rest.
+
+  You will respond in **JSON** format only, without any supporting text.
+  The ENTIRE response will be in a single line (that means absolutely NO new lines), and any quotes will be escaped with backslashes.
+  The response format should be like so:
+
+  Sentence Completion response format:
+  [{"question_type": "", "questions": [{"question": "", choices: ["", "", ...] "answer": "", "answer_explanation": ""}, ...]}]
+
+  Reading Comprehension response format:
+  [{"question_type": "", text_piece: "", "questions": [{"question": "", choices: ["", "", ...] "answer": "", "answer_explanation": ""}, ...]}]
+
+jlpt_levels:
+  N5:
+    Kanji: [日,一,人,年,大,十,二,本,中,出,三,見,月,生,五,上,四,金,九,入,学,円,子,八,六,下,気,小,七,山,女,百,先,名,川,千,水,国,長,男,時,行,分,後,前,間,東,今,高,校,土,外,木,来,車,話,北,午,書,半,白,西,電,天,語,聞,食,何,南,火,右,万,左,休,毎,母,読,友,父,雨]
+    Grammar: [いちばん,が,か,がある,がいる,から,くらい / ぐらい,けど / けれども,する,だ / です,たい,だけ,たことがある,だろう,つもり,で,ている,てから,てください,でしょう,てはいけない,てもいい,と,な,ないでください,なる,に / へ,に,にいく,にする,の,のが下手,のが上手,のが好き,ので,は,ほうがいい,前に,まだ,まで,も,もう,や,より○○のほうが○○]
