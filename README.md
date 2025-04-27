@@ -19,6 +19,53 @@ $ jlpt-cli quiz --level n5
 After injecting the generated prompt into an LLM, you can display the results nicely with the `--prompt_result` flag:
 ```bash
 $ jlpt-cli quiz --level n5 --prompt_result '[{"question_type": "SentenceCompletion", "questions": [{"question": "今日の天気は白いくも＿＿あります。", "choices": ["が", "に", "で", "を"], "answer": "が", "answer_explanation": "'が' is used to describe a characteristic of the subject. 'くもがある' means 'there are clouds'."}, {"question": "父は川＿＿魚をつりました。", "choices": ["に", "で", "へ", "を"], "answer": "で", "answer_explanation": "'で' indicates the place where an action occurs. Here, the action (fishing) happens at the river."}, {"question": "学校へ行く＿＿、本を買いました。", "choices": ["てから", "のが好き", "たい", "だけ"], "answer": "てから", "answer_explanation": "'てから' shows that one action happens after another. 'After going to school, I bought a book.'"}, {"question": "この山は日本で＿＿高いです。", "choices": ["いちばん", "だけ", "より", "だろう"], "answer": "いちばん", "answer_explanation": "'いちばん' means 'the most'. Here it is used to express the highest mountain in Japan."}, {"question": "友だちと話すの＿＿上手です。", "choices": ["が", "で", "に", "を"], "answer": "が", "answer_explanation": "'のが上手です' requires 'が' to link the activity (talking with friends) to the adjective (skillful)."}]}, {"question_type": "ReadingComprehension", "text_piece": "毎年、父と母といっしょに山へ行きます。山ではたくさんの木を見たり、川で水を飲んだりします。今年は三月に行くつもりです。", "questions": [{"question": "だれと山へ行きますか。", "choices": ["一人で", "友だちと", "父と母と", "先生と"], "answer": "父と母と", "answer_explanation": "The text says '父と母といっしょに', meaning 'together with father and mother'."}, {"question": "山で何をしますか。", "choices": ["水を飲みます", "食べます", "車を見ます", "学校へ行きます"], "answer": "水を飲みます", "answer_explanation": "The text mentions '川で水を飲んだりします', meaning 'drink water at the river'."}, {"question": "今年はいつ行きますか。", "choices": ["五月", "三月", "六月", "九月"], "answer": "三月", "answer_explanation": "The text says '今年は三月に行くつもりです', meaning 'this year, planning to go in March'."}]}]'
+
+───────────────────────────────
+Sentence Completion
+───────────────────────────────
+Question: 今日の天気は白いくも＿＿あります。
+が, に, で, を
+
+Answer: が
+
+Question: 父は川＿＿魚をつりました。
+に, で, へ, を
+
+Answer: で
+
+Question: 学校へ行く＿＿、本を買いました。
+てから, のが好き, たい, だけ
+
+Answer: てから
+
+Question: この山は日本で＿＿高いです。
+いちばん, だけ, より, だろう
+
+Answer: いちばん
+
+Question: 友だちと話すの＿＿上手です。
+が, で, に, を
+
+Answer: が
+
+───────────────────────────────
+Reading Comprehension
+毎年、父と母といっしょに山へ行きます。山ではたくさんの木を見たり、川で水を飲んだりします。今年は三月に行くつもりです。
+───────────────────────────────
+Question: だれと山へ行きますか。
+一人で, 友だちと, 父と母と, 先生と
+
+Answer: 父と母と
+
+Question: 山で何をしますか。
+水を飲みます, 食べます, 車を見ます, 学校へ行きます
+
+Answer: 水を飲みます
+
+Question: 今年はいつ行きますか。
+五月, 三月, 六月, 九月
+
+Answer: 三月
 ```
 
 
